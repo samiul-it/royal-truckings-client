@@ -1,0 +1,21 @@
+.item-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    justify-items: center;
+    
+}
+.item-container-parent{
+    background-color: antiquewhite;
+}
+
+
+@media only screen and (max-width:520px) { 
+    .item-card-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+       
+    }
+}
