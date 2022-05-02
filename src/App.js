@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import NavigationBar from './Pages/Home/Shared/NavigationBar/NavigationBar';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavigationBar></NavigationBar>
+
+      
+      <h1>Welcome to Royal Truckings BD LTD</h1>
+      <p className="text-info">The Website is under Development,keep Patience and Stay with us</p>
     </div>
   );
 }
