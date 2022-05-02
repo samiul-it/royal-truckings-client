@@ -7,14 +7,14 @@ import logo from  '../../../../Resources/Images/navlogo-1.png';
 const NavigationBar = () => {
     return (
       <div>
-          <div className="navbar-container">
+          <div className="nav-container">
               <div className="nav-title-container">
                   <div className="nav-logo">
                       <img src={logo} alt="royal truckings bd" />
 
                   </div>
                   <div className="nav-title">
-                      <h2>Royal Truckings BD LTD.</h2>
+                      <p id='text-title'>Royal Truckings BD LTD.</p>
 
                   </div>
 
