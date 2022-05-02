@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "productName": "Eicher Truck",
+        "price": 155550,
+        "description": "Skin and Dermatology car will provide you a free screening of your body and doctor will provide you the solutions with detailed report.",
+        "img": "https://i.ibb.co/B6CVsYw/30794e92fe379f3a4166006af4844cd1.jpg",
+        "quantity":0,
+        "supplierName":"NA"
+    },
+    {
+        "id":3,
+        "productName": "Ashok Leyland",
+        "price": 1250000,
+        "description": "During this pandemic situation you can consult with our doctor remotely.To avail this please create a account on our portal.",
+        "img": "https://i.ibb.co/PMkgJW5/ashok-leyland-tipper-1.jpg",
+        "quantity":0,
+        "supplierName":"NA"
+    },
+    {
+        "id": 4,
+        "productName": "Hino AK Series",
+        "price": 2000000,
+        "description": "Ultrasonography with our powerful Mitsubishi USG machine will provide you a clear ultrasonography photograph and detailed report.",
+        "img": "https://i.ibb.co/dkGb45q/hino500-07.png",
+        "quantity":0,
+        "supplierName":"NA"
+    }
+]
