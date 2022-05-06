@@ -1,13 +1,17 @@
 import React from 'react';
 import './Item.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const Item = ({item}) => {
-    const {productName,img,price,description,quantity,supplierName}=item;
+    const {id,productName,img,price,description,quantity,supplierName}=item;
+
+    const navigate=useNavigate();
     
 
-    const navigateToManageItem=(oroductName)=>{
-      console.log("Clicked",productName);
+    const navigateToManageItem=(itemId)=>{
+      navigate(`/item/${itemId}`);
+      
       
     }
     return (
@@ -27,7 +31,7 @@ const Item = ({item}) => {
             <p>Supplier: {supplierName}</p>
             <h6>Stock:{quantity}</h6>
           </div>
-          <button onClick={navigateToManageItem} className=" btn btn-danger  btn-block">
+          <button onClick={()=>navigateToManageItem(id)} className=" btn btn-danger  btn-block">
             Manage Item
           </button>
         </div>

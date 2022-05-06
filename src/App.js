@@ -9,6 +9,12 @@ import { Route, Routes } from 'react-router-dom';
 import Loading from './Pages/Loading/Loading';
 import PasswordReset from './Pages/Authentication/PsswordReset/PasswordReset';
 import RequireAuth from './Pages/Authentication/Utilities/RequireAuth/RequireAuth';
+import Items from './Pages/Items/Items';
+import ManageItem from './Pages/ManageItem/ManageItem';
+import Error from './Pages/Error/Error';
+import About from './Pages/Home/About/About';
+import Blog from './Pages/Home/Blog/Blog';
+
 
 
 function App() {
@@ -19,17 +25,25 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/blogs" element={<Blog></Blog>}></Route>
 
+        <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/items" element={<Items></Items>}></Route>
         <Route
-          path="/register"
+          path="/item/:id"
           element={
-              <Register></Register>
+            <RequireAuth>
+              <ManageItem></ManageItem>
+            </RequireAuth>
           }
         ></Route>
+
         <Route
           path="/password-reset"
           element={<PasswordReset></PasswordReset>}
         ></Route>
+        <Route path="*" element={<Error></Error>}></Route>
       </Routes>
 
       {/*Toasify Credentails */}

@@ -6,12 +6,12 @@ import {getAuth} from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDPu9hsLpyKWcqT1IgUadT7PN5GgLcxBDQ",
-  authDomain: "royal-truckings.firebaseapp.com",
-  projectId: "royal-truckings",
-  storageBucket: "royal-truckings.appspot.com",
-  messagingSenderId: "485619204534",
-  appId: "1:485619204534:web:677b969b9845085c7c4117",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

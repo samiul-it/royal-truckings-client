@@ -72,45 +72,47 @@ const Register = () => {
   return (
     <div>
       <h5>Welcome to Register Page!!</h5>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-fields mx-auto">
-          <input
-            placeholder="Enter your Email"
-            {...register("email", { required: true })}
-          />
-          {errors.email && <span className="text-danger"> Required</span>}
-          <input
-            type="password"
-            placeholder="Enter your Password"
-            {...register("password", { required: true })}
-          />
+      <div className="login-container">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-fields mx-auto">
+            <input
+              placeholder="Enter your Email"
+              {...register("email", { required: true })}
+            />
+            {errors.email && <span className="text-danger"> Required</span>}
+            <input
+              type="password"
+              placeholder="Enter your Password"
+              {...register("password", { required: true })}
+            />
 
-          {errors.password && <span className="text-danger">Required</span>}
+            {errors.password && <span className="text-danger">Required</span>}
 
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            {...register("confirmPassword", { required: true })}
-          />
-          {errors.confirmPassword && (
-            <span className="text-danger">Please Confirm your password!</span>
-          )}
-          <br />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              {...register("confirmPassword", { required: true })}
+            />
+            {errors.confirmPassword && (
+              <span className="text-danger">Please Confirm your password!</span>
+            )}
+            <br />
 
-          <p id="account-offer">
-            Already have an account?
-            <Link
-              className="text-primary"
-              to="/login"
-              onClick={navigateToLogin}
-            >
-              Login here
-            </Link>
-          </p>
+            <p id="account-offer">
+              Already have an account?
+              <Link
+                className="text-primary"
+                to="/login"
+                onClick={navigateToLogin}
+              >
+                Login here
+              </Link>
+            </p>
 
-          <button className="btn btn-warning">Register</button>
-        </div>
-      </form>
+            <button className="btn btn-warning">Register</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

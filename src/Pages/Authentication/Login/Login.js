@@ -9,6 +9,7 @@ import Loading from './../../Loading/Loading';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
+import { BiLogInCircle } from "react-icons/bi";
 
 const Login = () => {
   const emailRef=useRef("");
@@ -49,41 +50,46 @@ const Login = () => {
 
   return (
     <div>
-      <h1>Welcome to Login Page</h1>
-      <form onSubmit={handleFormSubmit}>
+      <h5>Please log in here</h5>
+      <div className="login-container">
+        <form onSubmit={handleFormSubmit}>
+          <div className="form-fields mx-auto">
+            <input
+              ref={emailRef}
+              required
+              type="email"
+              placeholder="Enter Your Email"
+            />
+            <input
+              ref={passwordRef}
+              type="password"
+              required
+              placeholder="Enter Your Password"
+            />
+            <button className="btn btn-success"> <BiLogInCircle></BiLogInCircle>Login</button>
+          </div>
+        </form>
         <div className="form-fields mx-auto">
-          <input
-            ref={emailRef}
-            required
-            type="email"
-            placeholder="Enter Your Email"
-          />
-          <input
-            ref={passwordRef}
-            type="password"
-            required
-            placeholder="Enter Your Password"
-          />
-          <button className="btn btn-success">Login</button>
+          <GoogleSignIn></GoogleSignIn>
+          <p>
+            Don't have account?
+            <Link
+              className="text-primary"
+              to="/register"
+              onClick={navigateToLogin}
+            >
+              Click to Register
+            </Link>
+          </p>
+          <Link
+            className="text-primary"
+            to="/password-reset"
+            onClick={navigateToLogin}
+          >
+            Reset Password
+          </Link>
         </div>
-      </form>
-      <div className="form-fields mx-auto">
-        <GoogleSignIn></GoogleSignIn>
       </div>
-
-      <p>
-        Don't have account?
-        <Link className="text-primary" to="/register" onClick={navigateToLogin}>
-          Click to Register
-        </Link>
-      </p>
-      <Link
-        className="text-primary"
-        to="/password-reset"
-        onClick={navigateToLogin}
-      >
-        Reset Password
-      </Link>
     </div>
   );
 };
