@@ -65,26 +65,25 @@ const Login = () => {
             placeholder="Enter Your Password"
           />
           <button className="btn btn-success">Login</button>
-          <GoogleSignIn></GoogleSignIn>
-          <p>
-            Don't have account?
-            <Link
-              className="text-primary"
-              to="/register"
-              onClick={navigateToLogin}
-            >
-              Click to Register
-            </Link>
-          </p>
-          <Link
-            className="text-primary"
-            to="/password-reset"
-            onClick={navigateToLogin}
-          >
-            Reset Password
-          </Link>
         </div>
       </form>
+      <div className="form-fields mx-auto">
+        <GoogleSignIn></GoogleSignIn>
+      </div>
+
+      <p>
+        Don't have account?
+        <Link className="text-primary" to="/register" onClick={navigateToLogin}>
+          Click to Register
+        </Link>
+      </p>
+      <Link
+        className="text-primary"
+        to="/password-reset"
+        onClick={navigateToLogin}
+      >
+        Reset Password
+      </Link>
     </div>
   );
 };

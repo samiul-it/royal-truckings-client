@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import { Route, Routes } from 'react-router-dom';
 import Loading from './Pages/Loading/Loading';
 import PasswordReset from './Pages/Authentication/PsswordReset/PasswordReset';
+import RequireAuth from './Pages/Authentication/Utilities/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -18,7 +19,13 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register" element={<Register></Register>}></Route>
+
+        <Route
+          path="/register"
+          element={
+              <Register></Register>
+          }
+        ></Route>
         <Route
           path="/password-reset"
           element={<PasswordReset></PasswordReset>}
