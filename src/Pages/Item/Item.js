@@ -1,8 +1,15 @@
 import React from 'react';
 import './Item.css';
 
+
 const Item = ({item}) => {
     const {productName,img,price,description,quantity,supplierName}=item;
+    
+
+    const navigateToManageItem=(oroductName)=>{
+      console.log("Clicked",productName);
+      
+    }
     return (
       <>
         <div className="card-container">
@@ -20,7 +27,7 @@ const Item = ({item}) => {
             <p>Supplier: {supplierName}</p>
             <h6>Stock:{quantity}</h6>
           </div>
-          <button className=" btn btn-danger btn-lg btn-block">
+          <button onClick={navigateToManageItem} className=" btn btn-danger  btn-block">
             Manage Item
           </button>
         </div>
