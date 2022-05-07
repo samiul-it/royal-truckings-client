@@ -15,7 +15,6 @@ const MyItems = () => {
         const loadMyItems = () => {
           const myItems = items.filter((item) => item.userEmail == user.email);
           setDisplayMyItems(myItems);
-          console.log(displayMyItems);
         };
         loadMyItems();
 

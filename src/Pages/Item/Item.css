@@ -4,8 +4,9 @@
     padding: 3px;
     border-radius: 8px;
     background-color: white;
-    height: 630px;
+    height: 580px;
     width: 350px;
+    margin-bottom: 30px;
 }
 .card-description p {
     font-size: 18px;

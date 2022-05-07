@@ -66,6 +66,7 @@ const AddItem = () => {
                 placeholder="Enter Your Product Name"
               />
               <input
+                title="Post the Image link here"
                 ref={imgUrlRef}
                 type="text"
                 required

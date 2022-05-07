@@ -31,7 +31,9 @@ const NavigationBar = () => {
         <div className="nav-container">
           <div className="nav-title-container">
             <div className="nav-logo">
-              <img src={logo} alt="royal truckings bd" />
+              <Link to="/home">
+                <img src={logo} alt="royal truckings bd" />
+              </Link>
             </div>
             <div className="nav-title">
               <p id="text-title">Royal Truckings BD LTD.</p>
@@ -41,9 +43,11 @@ const NavigationBar = () => {
             <Link to="/home">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/blogs">Blogs</Link>
+
             {user ? (
               <>
                 <Link to="/manage-inventories">Manage Inventories</Link>
+                <Link to="/additem">Add Items</Link>
                 <Link to="/myitems">My Items</Link>
                 <Link to="/home" onClick={handleSignOut}>
                   {" "}
