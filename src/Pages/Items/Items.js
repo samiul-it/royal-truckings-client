@@ -15,7 +15,7 @@ const Items = () => {
       <h1 className="text-success">Items ({items.length})</h1>
       <div className="item-card-container">
         {items.map((item) => (
-          <Item key={item.id} item={item}></Item>
+          <Item key={item._id} item={item}></Item>
         ))}
       </div>
       <button onClick={navigateToManageAllItems} className="btn btn-info">Manage All</button>
