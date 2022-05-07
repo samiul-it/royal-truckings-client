@@ -43,8 +43,8 @@ const NavigationBar = () => {
             <Link to="/blogs">Blogs</Link>
             {user ? (
               <>
-                <Link to="inventories">Manage Inventories</Link>
-                <Link to="myitems">My Items</Link>
+                <Link to="/manage-inventories">Manage Inventories</Link>
+                <Link to="/myitems">My Items</Link>
                 <Link to="/home" onClick={handleSignOut}>
                   {" "}
                   Sign Out

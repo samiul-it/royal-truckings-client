@@ -1,9 +1,22 @@
 import React, { useRef } from 'react';
 import './AddItem.css';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/Firebase.init';
 
 
 const AddItem = () => {
+
+    const [user, loading, error] = useAuthState(auth);
+
+    
+
+    const navigate=useNavigate();
+    const navigateToItems=()=>{
+        navigate('/items');
+    }
 
     const productNameRef=useRef('');
     const imgUrlRef = useRef("");
@@ -15,30 +28,29 @@ const AddItem = () => {
     const handleFormSubmit=(e)=>{
         e.preventDefault();
 
-        const name=productNameRef.current.value;
-        const imgUrl=imgUrlRef.current.value;
+        const productName=productNameRef.current.value;
+        const img=imgUrlRef.current.value;
         const description=descriptionRef.current.value;
         const quantity=quantityRef.current.value;
-        const supplier=supplierNameRef.current.value;
+        const supplierName=supplierNameRef.current.value;
         const price=priceRef.current.value;
+        const userEmail=user.email;
 
-        const data={name,imgUrl,description,quantity,supplier,price};
+        const data={productName,img,description,quantity,supplierName,price,userEmail};
         console.log(data);
 
         const url="http://localhost:5000/item/";
-        fetch(url,{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(data)
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
         })
-        .then(res=>res.json())
-        .then(result=>console.log(result));
-
-
-       
-
+          .then((res) => res.json())
+          .then((result) => console.log(result))
+          .then(toast.success("Success!Item Added"));
+        
     }
 
     return (

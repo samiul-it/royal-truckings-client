@@ -15,6 +15,8 @@ import Error from './Pages/Error/Error';
 import About from './Pages/Home/About/About';
 import Blog from './Pages/Home/Blog/Blog';
 import AddItem from './Pages/AddItem/AddItem';
+import ManageInventories from './Pages/ManageInventories/ManageInventories';
+import MyItems from './Pages/MyItems/MyItems';
 
 
 
@@ -30,6 +32,15 @@ function App() {
         <Route path="/blogs" element={<Blog></Blog>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/items" element={<Items></Items>}></Route>
+        <Route path='/myitems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
+        <Route
+          path="/manage-inventories"
+          element={
+            <RequireAuth>
+              <ManageInventories></ManageInventories>
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/item/:id"
           element={

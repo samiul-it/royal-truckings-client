@@ -26,6 +26,7 @@ const ManageItem = () => {
 
 
     const deliverItem=()=>{
+    
         
         
         if(deliver>0){
@@ -40,11 +41,7 @@ const ManageItem = () => {
         }
         
     }
-    
-    
-
-    
-    
+      
     
     return (
       <div>
