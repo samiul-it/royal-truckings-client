@@ -12,13 +12,13 @@ const Items = () => {
   }
   return (
     <div className="item-container-parent">
-      <h1 className="text-success">Items ({items.length})</h1>
+      <h1 className="text-success">Items (6)</h1>
       <div className="item-card-container">
-        {items.map((item) => (
+        {items.slice(0,6).map((item) => (
           <Item key={item._id} item={item}></Item>
         ))}
       </div>
-      <button onClick={navigateToManageAllItems} className="btn btn-info">Manage All</button>
+      <button onClick={navigateToManageAllItems} className="btn btn-info">Show All Items</button>
     </div>
   );
 };

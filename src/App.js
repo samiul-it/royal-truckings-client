@@ -17,6 +17,8 @@ import Blog from './Pages/Home/Blog/Blog';
 import AddItem from './Pages/AddItem/AddItem';
 import ManageInventories from './Pages/ManageInventories/ManageInventories';
 import MyItems from './Pages/MyItems/MyItems';
+import AllItems from './Pages/AllItems/AllItems';
+import Footer from './Pages/Home/Shared/Footer/Footer';
 
 
 
@@ -31,8 +33,22 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blogs" element={<Blog></Blog>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/items" element={<Items></Items>}></Route>
-        <Route path='/myitems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
+        <Route
+          path="/items"
+          element={
+            <RequireAuth>
+              <AllItems></AllItems>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/myitems"
+          element={
+            <RequireAuth>
+              <MyItems></MyItems>
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/manage-inventories"
           element={
@@ -68,6 +84,7 @@ function App() {
       {/*Toasify Credentails */}
 
       <ToastContainer />
+      <Footer></Footer>
     </div>
   );
 }
