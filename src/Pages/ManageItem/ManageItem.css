@@ -1,0 +1,30 @@
+.stock-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+
+}
+.manage-stock-container input {
+    margin: 10px auto;
+    display: flex;
+    background-color: aquamarine;
+    flex-direction: column;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    border: 0px;
+}
+
+@media only screen and (max-width:520px){
+    .stock-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            align-items: center;
+            justify-content: space-between;
+            justify-items: center;
+    
+        }
+
+}

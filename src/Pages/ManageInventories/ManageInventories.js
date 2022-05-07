@@ -48,12 +48,16 @@ const ManageInventories = () => {
             </tr>
           </thead>
           <tbody>
-            {items.map((item) => (
+            {items.map((item, index) => (
               <tr key={item._id}>
-                <td>{}</td>
+                <td>{index + 1}</td>
                 <td>{item.productName}</td>
                 <td>{item.description}</td>
-                <td>{item.quantity}</td>
+                <td>
+                  {item.quantity < 5
+                    ? item.quantity + "(Low Stock)"
+                    : item.quantity}
+                </td>
                 <td>{item.price}</td>
                 <td>{item.supplierName}</td>
                 <td>
