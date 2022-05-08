@@ -10,6 +10,7 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import { BiLogInCircle } from "react-icons/bi";
+import axios from 'axios';
 
 const Login = () => {
   const emailRef=useRef("");
@@ -26,17 +27,22 @@ const Login = () => {
 
     useEffect(() => {
       if (user) {
-        navigate(from, { replace: true });
+        
       }
     }, [user]);
 
-  const handleFormSubmit=(e)=>{
+  const handleFormSubmit=async(e)=>{
     e.preventDefault();
     const email=emailRef.current.value;
     const password=passwordRef.current.value;
     console.log(email,password);
-    signInWithEmailAndPassword(email,password);
+    await signInWithEmailAndPassword(email,password);
     console.log("Login Successfull");
+
+    const { data } = await axios.post("http://localhost:5000/login",{email});
+    console.log(data);
+    localStorage.setItem('accessToken',data);
+    navigate(from, { replace: true });
   }
 
   if (error) {

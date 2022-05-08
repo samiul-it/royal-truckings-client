@@ -4,6 +4,7 @@ import auth from '../../Firebase/Firebase.init';
 import useItems from '../../hooks/useItems';
 import { useEffect } from 'react';
 import './Myitems.css';
+import axios from "axios";
 
 const MyItems = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -12,9 +13,25 @@ const MyItems = () => {
     
 
     useEffect(()=>{
-        const loadMyItems = () => {
+        const loadMyItems = async() => {
           const myItems = items.filter((item) => item.userEmail == user.email);
           setDisplayMyItems(myItems);
+
+
+          const url = `http://localhost:5000/myitems?email=${user.email}`;
+
+            try{
+                const {data} = await axios.get(url,{
+                  headers:{
+                    authorization:`Bearer ${localStorage.getItem('accessToken')}`
+                  }
+                });
+            }
+            catch(error){
+                console.log(error.message);
+                if(error.response.status === 401 || error.response.status === 403){
+                }
+            }
         };
         loadMyItems();
 
