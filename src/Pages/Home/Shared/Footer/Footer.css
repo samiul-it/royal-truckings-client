@@ -3,7 +3,30 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.565);
     color: white;
     text-align: center;
+}
+.footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.footer-links a{
+    font-size: 10px;
+    color: aliceblue;
+}
+.footer-links svg{
+    font-size: 18px;
+    color: rgb(71, 237, 5);
+}
+.footer-links svg:hover {
+    
+    color: rgb(237, 183, 5);
+}
+.footer p{
+    font-size: 18px;
 }
