@@ -1,11 +1,15 @@
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.565);
+    background-color: rgb(0, 0, 0);
     color: white;
     text-align: center;
+    margin-top: 250px;
+}
+.footer p {
+    font-size: 18px;
 }
 .footer-links {
     display: flex;
@@ -14,7 +18,27 @@
     align-items: flex-end;
     align-content: flex-end;
 }
+.footer-caption{
+    margin-top: 30px;
+    display: flex;
+    
+}
+.footer-caption p:hover{
+    color: rgb(217, 204, 204);
 
+}
+.top-suppliers p{
+    font-size: 14px;
+    color: rgb(149, 147, 147);
+}
+.top-products p{
+    font-size: 14px;
+    color: rgb(149, 147, 147);
+}
+.top-suppliers {
+    
+
+}
 .footer-links a{
     font-size: 10px;
     color: aliceblue;
@@ -24,9 +48,16 @@
     color: rgb(71, 237, 5);
 }
 .footer-links svg:hover {
-    
-    color: rgb(237, 183, 5);
-}
-.footer p{
     font-size: 18px;
+    color: rgb(175, 237, 5);
+}
+
+@media only screen and (max-width:520px) {
+
+    .footer-caption {
+            display: flex;
+            flex-direction: column;
+    
+        }
+
 }

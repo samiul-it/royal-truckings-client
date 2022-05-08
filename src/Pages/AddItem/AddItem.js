@@ -39,7 +39,7 @@ const AddItem = () => {
         const data={productName,img,description,quantity,supplierName,price,userEmail};
         console.log(data);
 
-        const url="http://localhost:5000/item/";
+        const url="https://morning-basin-29201.herokuapp.com/item/";
         fetch(url, {
           method: "POST",
           headers: {

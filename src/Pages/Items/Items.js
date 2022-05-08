@@ -18,7 +18,7 @@ const Items = () => {
           <Item key={item._id} item={item}></Item>
         ))}
       </div>
-      <button onClick={navigateToManageAllItems} className="btn btn-info">Show All Items</button>
+      
     </div>
   );
 };

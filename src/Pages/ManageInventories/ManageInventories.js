@@ -13,7 +13,7 @@ const ManageInventories = () => {
     const handleDeleteItem=(id)=>{
         const confirmDelete=window.confirm("Are you Sure?");
         if(confirmDelete){
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://morning-basin-29201.herokuapp.com/item/${id}`;
             fetch(url,{
                 method:'DELETE'
             })

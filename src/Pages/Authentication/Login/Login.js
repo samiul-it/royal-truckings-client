@@ -39,7 +39,7 @@ const Login = () => {
     await signInWithEmailAndPassword(email,password);
     console.log("Login Successfull");
 
-    const { data } = await axios.post("http://localhost:5000/login",{email});
+    const { data } = await axios.post("https://morning-basin-29201.herokuapp.com/login",{email});
     console.log(data);
     localStorage.setItem('accessToken',data);
     navigate(from, { replace: true });

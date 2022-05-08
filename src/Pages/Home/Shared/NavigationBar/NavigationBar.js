@@ -13,10 +13,10 @@ const NavigationBar = () => {
     const [user, loading, error] = useAuthState(auth);
 
     if(user){
-        console.log("User Found!");
+        // console.log("User Found!");
     }
     if (!user) {
-      console.log("No Signed in User");
+      // console.log("No Signed in User");
     }
     
     const handleSignOut=()=>{
@@ -41,7 +41,7 @@ const NavigationBar = () => {
           </div>
           <div className="nav-items">
             <Link to="/home">Home</Link>
-            <Link to="/about">About</Link>
+            <Link to="/items">All Items</Link>
             <Link to="/blogs">Blogs</Link>
 
             {user ? (

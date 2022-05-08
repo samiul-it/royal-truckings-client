@@ -6,7 +6,7 @@ const useItemDetail = (itemId) => {
 
     const [itemDetail, setItemDetail] = useState({});
     useEffect(() => {
-      const url = `http://localhost:5000/item/${itemId}`;
+      const url = `https://morning-basin-29201.herokuapp.com/item/${itemId}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => setItemDetail(data));
