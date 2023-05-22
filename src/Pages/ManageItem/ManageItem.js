@@ -29,7 +29,7 @@ const ManageItem = () => {
       const updatedStock={stockInt};
       // console.log("DV", deliver);
 
-      const url = `https://morning-basin-29201.herokuapp.com/item/${id}`;
+      const url = `https://royal-trucking-server.onrender.com/item/${id}`;
 
       fetch(url, {
         method: "PUT",
@@ -75,7 +75,7 @@ const ManageItem = () => {
 
           const updatedStock = { stockInt };
 
-          const url = `https://morning-basin-29201.herokuapp.com/item/${id}`;
+          const url = `https://royal-trucking-server.onrender.com/item/${id}`;
 
           fetch(url, {
             method: "PUT",

@@ -18,7 +18,7 @@ const MyItems = () => {
           setDisplayMyItems(myItems);
 
 
-          const url = `https://morning-basin-29201.herokuapp.com/myitems?email=${user.email}`;
+          const url = `https://royal-trucking-server.onrender.com/myitems?email=${user.email}`;
 
             try{
                 const {data} = await axios.get(url,{

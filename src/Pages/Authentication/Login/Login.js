@@ -39,7 +39,7 @@ const Login = () => {
     await signInWithEmailAndPassword(email,password);
     console.log("Login Successfull");
 
-    const { data } = await axios.post("https://morning-basin-29201.herokuapp.com/login",{email});
+    const { data } = await axios.post("https://royal-trucking-server.onrender.com/login",{email});
     console.log(data);
     localStorage.setItem('accessToken',data);
     navigate(from, { replace: true });

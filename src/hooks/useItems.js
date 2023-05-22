@@ -5,7 +5,7 @@ const useItems=()=>{
     const [items,setItems]=useState([]);
 
     useEffect(()=>{
-        const url = `https://morning-basin-29201.herokuapp.com/items`;
+        const url = `https://royal-trucking-server.onrender.com/items`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>setItems(data));
